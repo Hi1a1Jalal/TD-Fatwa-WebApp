@@ -1,1 +1,0 @@
-# TD-Fatwa-WebApp
