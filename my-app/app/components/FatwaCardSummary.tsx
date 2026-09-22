@@ -11,6 +11,7 @@ interface FatwaCardSummaryProps {
 export default function FatwaCard({ fatwa, onReadMore }: FatwaCardSummaryProps) {
   return (
     <Card
+      sx={{width: "400px"}}
       variant="elevation"
       className="shadow-blue-400 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
     >

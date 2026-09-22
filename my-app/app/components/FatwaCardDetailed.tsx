@@ -1,8 +1,7 @@
-"use client"
+"use client";
 import { Card, CardContent, Typography, Button } from "@mui/material";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { FatwaDetailed } from "../mockData";
-
 
 interface FatwaCardDetailedProps {
   fatwa: FatwaDetailed;
@@ -11,58 +10,40 @@ interface FatwaCardDetailedProps {
 export default function FatwaCardDetailed({ fatwa }: FatwaCardDetailedProps) {
   const router = useRouter();
   return (
-    <Card elevation={3} className="mx-auto max-w-4xl rounded-xl">
-      <CardContent className="p-8">
+    <div className="bg-sky-900 rounded-4xl w-full max-w-11/12 ">
+      <div className="p-8">
         {/* Question */}
-        <Typography variant="overline" className="text-blue-600 font-semibold">
-          Question
-        </Typography>
+        <h1 className="font-semibold">Question</h1>
 
-        <Typography
-          variant="h4"
-          component="h1"
-          className="mt-2 font-bold text-slate-900"
-        >
-          {fatwa.question}
-        </Typography>
+        <h2 className="mt-2 font-bold ">{fatwa.question}</h2>
 
         {/* Metadata */}
-        <div className="mt-6 flex flex-wrap gap-6 border-y py-4 text-sm text-slate-600">
+        <div className="mt-6 flex flex-wrap gap-6 border-y py-4 text-sm ">
           <div>
-            <span className="font-semibold text-slate-800">Answered by:</span>{" "}
+            <span className="font-semibold">Answered by:</span>{" "}
             {fatwa.answeredBy}
           </div>
 
           <div>
-            <span className="font-semibold text-slate-800">Published:</span>{" "}
+            <span className="font-semibold">Published:</span>{" "}
             {new Date(fatwa.createdDate).toLocaleDateString()}
           </div>
 
           <div>
-            <span className="font-semibold text-slate-800">Category:</span>{" "}
+            <span className="font-semibold">Category:</span>{" "}
             {fatwa.baseCategory}
           </div>
 
-          <div>
-            <span className="font-semibold text-slate-800">Subcategory:</span>{" "}
+          <h2>
+            <span className="font-semibold">Subcategory:</span>{" "}
             {fatwa.subCategory}
-          </div>
+          </h2>
         </div>
 
         {/* Answer */}
-        <Typography
-          variant="overline"
-          className="mt-8 block text-blue-600 font-semibold"
-        >
-          Answer
-        </Typography>
+        <h2 className="mt-8 block font-semibold">Answer</h2>
 
-        <Typography
-          variant="body1"
-          className="mt-3 whitespace-pre-line leading-8 text-slate-700"
-        >
-          {fatwa.answer}
-        </Typography>
+        <p className="mt-3 whitespace-pre-line">{fatwa.answer}</p>
 
         {/* Footer */}
         <div className="mt-10 flex justify-end border-t pt-6">
@@ -70,7 +51,7 @@ export default function FatwaCardDetailed({ fatwa }: FatwaCardDetailedProps) {
             Back
           </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

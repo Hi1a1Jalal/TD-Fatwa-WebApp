@@ -20,7 +20,7 @@ export default function FatwaList({ fatwas }: FatwaListProps) {
   }
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-wrap justify-center gap-5">
       {fatwas.map((fatwa, index) => (
         <FatwaCard
           key={index}

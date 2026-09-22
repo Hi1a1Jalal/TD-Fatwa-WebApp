@@ -7,16 +7,15 @@ export default async function Page({
   params: Promise<{ id: number }>;
 }) {
   const { id } = await params;
+  console.log("id", id);
   const data = await fetch(
     `${baseUrl}/fatwa/detailed?${new URLSearchParams({
       id: id.toString(),
     })}`,
   );
   const fatwa = await data.json();
-
+  console.log("fatwa", fatwa);
   return (
-    <div className="mx-auto flex max-w-5xl flex-col gap-6 p-4 mt-5">
       <FatwaCardDetailed fatwa={fatwa} />
-    </div>
   );
 }

@@ -1,6 +1,6 @@
 @layer theme, base, mui, components, utilities;
-@import 'tailwindcss';
 
+@import 'tailwindcss';
 
 @layer base {
   html {
@@ -8,22 +8,6 @@
   }
 
   body {
-  
-  }
-
-  h1 {
-    @apply text-4xl font-bold;
-  }
-
-  h2 {
-    @apply text-3xl font-semibold;
-  }
-
-  h3 {
-    @apply text-2xl font-semibold;
-  }
-
-  a {
-    @apply transition-colors;
+    color: white;
   }
 }

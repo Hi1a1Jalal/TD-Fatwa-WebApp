@@ -10,3 +10,8 @@ const Categories = z.object({
 });
 
 export type Categories = z.infer<typeof Categories>;
+
+/////
+export interface CategoriesAppBarInterfaceProps {
+  categories: Categories[];
+}
