@@ -1,5 +1,4 @@
 import FatwaCard from "@/app/components/FatwaCardSummary";
-import FatwaList from "@/app/components/FatwaList";
 
 export default async function Page({
   params,
@@ -8,7 +7,7 @@ export default async function Page({
 }) {
   const { id } = await params;
   const data = await fetch(
-    `${baseUrl}/fatwa/summarised?${new URLSearchParams({
+    `${process.env.baseUrl}/fatwa/summarised?${new URLSearchParams({
       id: id.toString(),
     })}`,
   );

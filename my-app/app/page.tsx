@@ -1,7 +1,7 @@
 import CustomSearchInput from "./components/CustomSearchInput";
 
 export default async function Home() {
-  const dataTwo = await fetch(`${baseUrl}/fatwa/count`);
+  const dataTwo = await fetch(`${process.env.baseUrl}/fatwa/count`);
   const fatawCount = await dataTwo.json();
 
   return (

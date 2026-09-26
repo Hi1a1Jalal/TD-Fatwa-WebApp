@@ -1,5 +1,4 @@
 import FatwaList from "@/app/components/FatwaList";
-import { FatwaSummarised } from "@/app/mockData";
 
 export default async function Page({
   params,
@@ -7,9 +6,9 @@ export default async function Page({
   params: Promise<{ subcategory: string }>;
 }) {
   const { subcategory } = await params;
-  console.log(`${baseUrl}/fatwa/subcategory`);
+  console.log(`${process.env.baseUrl}/fatwa/subcategory`);
   const response = await fetch(
-    `${baseUrl}/fatwa/subcategory?${new URLSearchParams({
+    `${process.env.baseUrl}/fatwa/subcategory?${new URLSearchParams({
       id: subcategory.toString(),
     })}`,
   );

@@ -27,7 +27,7 @@ export default function CustomSearchInput() {
       }
 
       const response = await fetch(
-        `${baseUrl}/fatwa/search?${new URLSearchParams({
+        `${process.env.baseUrl}/fatwa/search?${new URLSearchParams({
           fatwa: inputValue,
         })}`,
       );
