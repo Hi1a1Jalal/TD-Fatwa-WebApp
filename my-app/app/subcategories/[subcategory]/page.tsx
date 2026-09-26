@@ -1,5 +1,4 @@
 import FatwaList from "@/app/components/FatwaList";
-import { baseUrl } from "@/app/config";
 import { FatwaSummarised } from "@/app/mockData";
 
 export default async function Page({

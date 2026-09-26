@@ -4,7 +4,6 @@ import { ChangeEvent, useMemo, useState } from "react";
 import { Autocomplete, CircularProgress, TextField } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
-import { baseUrl } from "../config";
 import { FatwaSearchAutocomplete } from "./customisedComponents/AutoComplete";
 
 interface FatwaSearchResult {

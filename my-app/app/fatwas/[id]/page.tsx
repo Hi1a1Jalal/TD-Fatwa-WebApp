@@ -1,6 +1,5 @@
 import FatwaCard from "@/app/components/FatwaCardSummary";
 import FatwaList from "@/app/components/FatwaList";
-import { baseUrl } from "@/app/config";
 
 export default async function Page({
   params,

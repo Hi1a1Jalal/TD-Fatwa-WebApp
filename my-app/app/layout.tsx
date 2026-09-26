@@ -7,7 +7,6 @@ import theme from "./theme";
 
 import Providers from "./components/core/Providers";
 import CategoriesAppBar from "./components/CategoriesAppBar";
-import { baseUrl } from "./config";
 import MainAppBar from "./components/MainAppBar";
 import { Box } from "@mui/material";
 

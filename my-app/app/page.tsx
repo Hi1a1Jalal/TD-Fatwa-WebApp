@@ -1,5 +1,4 @@
 import CustomSearchInput from "./components/CustomSearchInput";
-import { baseUrl } from "./config";
 
 export default async function Home() {
   const dataTwo = await fetch(`${baseUrl}/fatwa/count`);
