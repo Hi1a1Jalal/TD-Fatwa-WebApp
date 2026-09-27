@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "standalone", // Crucial for DigitalOcean App Platform
   env: {
-    baseUrl: "http://localhost:5165/api",
+    NEXT_PUBLIC_APIURL: "http://localhost:5165/api",
   },
 };
 
