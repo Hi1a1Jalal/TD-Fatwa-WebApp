@@ -8,7 +8,7 @@ export default async function Page({
   const { id } = await params;
   console.log("id", id);
   const data = await fetch(
-    `${process.env.baseUrl}/fatwa/detailed?${new URLSearchParams({
+    `${process.env.NEXT_PUBLIC_API_URL}/fatwa/detailed?${new URLSearchParams({
       id: id.toString(),
     })}`,
   );
