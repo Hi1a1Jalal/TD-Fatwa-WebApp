@@ -21,11 +21,14 @@ jobs:
         with:
           node-version: "20.x"
           cache: "npm"
+          cache-dependency-path: my-app/package-lock.json
 
       - name: Install dependencies
+        working-directory: my-app
         run: npm ci
 
       - name: Build Next.js application
+        working-directory: my-app
         run: |
           npm run build
           cp -r .next/static .next/standalone/.next/static
@@ -38,4 +41,4 @@ jobs:
           app-name: ${{ env.WEBAPP_NAME }}
           slot-name: Production
           publish-profile: ${{ env.APPLICATION_PUBLISH_PROFILE }}
-          package: ./.next/standalone
+          package: ./my-app/.next/standalone
