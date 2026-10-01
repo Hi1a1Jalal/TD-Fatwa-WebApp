@@ -41,7 +41,6 @@ export default function RootLayout({
             <ThemeProvider theme={theme}>
               <Box
                 sx={{
-                  border: "dotted red",
                   minHeight: "100vh",
                   display: "flex",
                   flexDirection: "column",
