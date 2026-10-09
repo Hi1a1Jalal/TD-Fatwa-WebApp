@@ -23,7 +23,7 @@ export default function FatwaList({ fatwas }: FatwaListProps) {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
   return (
-    <div className="flex flex-wrap justify-center gap-5">
+    <div className="flex flex-wrap justify-center gap-5 gap-y-10">
       {fatwas.map((fatwa, index) => (
         <FatwaCard
           key={index}

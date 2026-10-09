@@ -13,9 +13,9 @@ export default function FatwaCard({ fatwa, onReadMore }: FatwaCardSummaryProps) 
     <Card
       sx={{width: "400px"}}
       variant="elevation"
-      className="shadow-blue-400 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+      className=" transition-all  duration-200 hover:-translate-y-1 shadow-blue-400 shadow-2xl inset-shadow-sm"
     >
-      <CardContent className="flex flex-col gap-4 p-6">
+      <CardContent className="flex flex-col gap-y-10 p-6">
         <Typography
           variant="h6"
           component="h2"
