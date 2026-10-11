@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import Link from "next/link";
 import CustomSearchInput from "./components/CustomSearchInput";
 import Counter from "./components/Counter";
