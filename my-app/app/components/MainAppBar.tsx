@@ -28,7 +28,6 @@ import React, { useState } from "react";
 import { Categories, CategoriesAppBarInterfaceProps } from "../interfaces";
 import { useBreakpoint } from "../hooks/useBreakpoint";
 import MenuIcon from "@mui/icons-material/Menu";
-export const dynamic = 'force-dynamic'
 
 export default function MainAppBar({
   categories,
