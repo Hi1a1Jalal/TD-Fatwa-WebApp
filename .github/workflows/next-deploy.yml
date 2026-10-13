@@ -1,17 +1,25 @@
+
+name: Deploy Next.js App
+
 on:
   push:
     branches:
-      - main  
+      - development
+      - main
   workflow_dispatch:
 
-env:
-  APPLICATION_PUBLISH_PROFILE: ${{ secrets.APP_PUBLISH_PROFILE }}
-  WEBAPP_NAME: "td-webapp-dev"
-  NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
+    # Select the GitHub Environment based on the branch
+    environment:
+      name: ${{ github.ref == 'refs/heads/main' && 'production' || 'development' }}
+
+    env:
+      WEBAPP_NAME: ${{ vars.WEBAPP_NAME }}
+      NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+      APPLICATION_PUBLISH_PROFILE: ${{ secrets.APP_PUBLISH_PROFILE }}
 
     steps:
       - uses: actions/checkout@v4
@@ -31,11 +39,14 @@ jobs:
         working-directory: my-app
         run: |
           npm run build
-          cp -r .next/static .next/standalone/.next/static
-          cp -r public .next/standalone/public
+          mkdir -p .next/standalone/.next/static
+          cp -r .next/static/. .next/standalone/.next/static/
+
+          if [ -d public ]; then
+            cp -r public .next/standalone/public
+          fi
 
       - name: Deploy to Azure Web App
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.WEBAPP_NAME }}
