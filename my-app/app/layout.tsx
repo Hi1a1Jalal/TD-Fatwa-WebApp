@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 console.log("baseurl", process.env.NEXT_PUBLIC_API_URL)
 
-const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories/all`);
+const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/categories/all`, {cache: "reload"});
 console.log('data', data)
 const categories = await data.json();
 
