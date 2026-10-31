@@ -6,7 +6,6 @@ export default async function Page({
   params: Promise<{ subcategory: string }>;
 }) {
   const { subcategory } = await params;
-  console.log(`${process.env.NEXT_PUBLIC_API_URL}/fatwa/subcategory`);
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/fatwa/subcategory?${new URLSearchParams({
       id: subcategory.toString(),
